@@ -1,0 +1,22 @@
+<form method="POST">
+                    {% csrf_token %}
+                    <form method="post">
+                        {% csrf_token %}
+                        <label for="num">Serial Number:</label>
+                        <input type="text" name="num" id="num" value="{{ contact.num }}" required><br><br>
+
+                        <label for="name">Item Name:</label>
+                        <input type="text" name="name" id="name" value="{{ contact.name }}" required><br><br>
+
+                        <label for="decription">Description:</label>
+                        <textarea name="decription" id="decription" rows="4" required>"{{ contact.decription }}"</textarea><br><br>
+
+                        <input type="submit" value="Update">
+                      </form>
+    <div class="box">
+        {% if messages %}
+             {% for msgs in messages %}
+                 {{msgs}}
+             {% endfor %}
+        {% endif %}
+    </div>
